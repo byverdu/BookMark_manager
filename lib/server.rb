@@ -30,7 +30,7 @@ class Bookmark < Sinatra::Base
 		url   = params["url"]
 		title = params["title"]
 
-		tags = params["tags"].split(" ").map do |tag|
+		tags  = params["tags"].split(", ").map do |tag|
 
 			Tag.first_or_create(:text => tag)
 
