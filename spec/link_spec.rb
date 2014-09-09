@@ -1,5 +1,3 @@
-
-
 describe Link do
 
   context "Demonstration of how Datamapper works" do
