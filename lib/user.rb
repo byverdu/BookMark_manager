@@ -7,6 +7,8 @@ class User
 	property :id, Serial
 	property :email, String, :unique => true, :message => "This email is already taken"
 	property :password_digest, Text
+	property :password_token, Text
+	property :password_token_timestamp, Time
 
 	attr_reader   :password
 	attr_accessor :password_confirmation

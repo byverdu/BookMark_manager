@@ -97,6 +97,58 @@ class Bookmark < Sinatra::Base
 		redirect to '/'
 	end
 
+	get '/users/reset_password' do
+		erb :"users/reset_password"
+	end
+
+	post '/users/reset_password' do
+		email = params[:email]
+		user = User.first(:email => email)
+
+		if !user.nil?
+			puts user.password_token = (1..64).map { ('A'..'Z').to_a.sample }.join
+			puts user.password_token_timestamp = Time.now
+			user.save
+			flash[:notice] = "A confirmation email has been sent to your account"
+			redirect to '/'
+		else
+			flash[:errors] = ["This email has not been registered"]
+			erb :"sessions/new"
+		end
+
+	end
+
+	get '/users/reset_password/:token' do |token|
+		user = User.first(:password_token => token)
+		session[:user_id] = user.id
+
+		if (Time.now - user.password_token_timestamp) > 3600
+			flash[:errors] = ["Your token has expired"]
+			redirect to '/users/reset_password'
+		else
+			redirect to '/users/confirm_password_reset'
+		end
+	end
+
+	get '/users/confirm_password_reset' do
+		@user = User.first(:id => session[:user_id])
+		if (Time.now - @user.password_token_timestamp) > 3600
+			flash[:errors] = ["Your token has expired"]
+			redirect to '/users/reset_password'
+		else
+			erb :"users/confirm_password_reset"
+		end
+	end
+
+	post '/users/confirm_password_reset' do
+		user = User.first(:password_token => params[:password_token])
+		user.password = params[:password]
+		user.save
+		
+		flash[:notice] = "Your password has been changed"
+
+		redirect to '/'
+	end
 end
 
 

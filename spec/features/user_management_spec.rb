@@ -59,6 +59,30 @@ feature "User signs in" do
 		
 	end
 
+	scenario "forgotten password" do
+
+		visit '/sessions/new'
+
+		expect(page).to have_content('forgotten password?')
+		click_link("forgotten password?")
+		expect(page.current_path).to eq '/users/reset_password'
+
+		expect(page).to have_field("email")
+
+		fill_in("email", with: "test@test.com" ) 
+
+		click_button("Send")
+
+		expect(page).to have_content("A confirmation email has been sent to your account")
+	end
+
+	scenario "resetting password" do
+		visit '/users/reset_password'
+
+		
+
+
+	end
 
 end
 
