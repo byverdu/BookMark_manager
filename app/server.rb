@@ -56,7 +56,7 @@ class Bookmark < Sinatra::Base
 	end
 
 	post '/users' do
-		@user = User.create(:email          => params[:email],
+		@user = User.create(:email          			 => params[:email],
 												:password              => params[:password],
 												:password_confirmation => params[:password_confirmation])
 
@@ -84,7 +84,7 @@ class Bookmark < Sinatra::Base
 			session[:user_id] = user.id
 			redirect to '/'
 		else
-			flash[:errors] = ["The email or password is incorrect"]
+			flash[:errors]    = ["The email or password is incorrect"]
 			erb :"sessions/new"
 		end
 	end	
@@ -106,7 +106,7 @@ class Bookmark < Sinatra::Base
 		user = User.first(:email => email)
 
 		if !user.nil?
-			puts user.password_token = (1..64).map { ('A'..'Z').to_a.sample }.join
+			puts user.password_token           = (1..64).map { ('A'..'Z').to_a.sample }.join
 			puts user.password_token_timestamp = Time.now
 			user.save
 			flash[:notice] = "A confirmation email has been sent to your account"
@@ -143,11 +143,11 @@ class Bookmark < Sinatra::Base
 	post '/users/confirm_password_reset' do
 		# raise params.inspect
 		user = User.first(:password_token => params[:password_token])
-		user.password = params[:password]
+		user.password              = params[:password]
 		user.password_confirmation = params[:password_confirmation]
 		user.save!
 		
-		flash[:notice] = "Your password has been changed"
+		flash[:notice]             = "Your password has been changed"
 
 		redirect to '/'
 	end
