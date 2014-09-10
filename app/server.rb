@@ -3,7 +3,7 @@ require "data_mapper"
 require "rack-flash"
 
 require_relative 'data_mapper_setup'
-require_relative './helpers/application'
+require_relative 'helpers/application'
 
 
 class Bookmark < Sinatra::Base
@@ -16,7 +16,7 @@ class Bookmark < Sinatra::Base
 	enable :sessions
 
 	use Rack::Flash
-	
+	use Rack::MethodOverride
 
 	get '/' do
 		@links = Link.all
@@ -88,6 +88,15 @@ class Bookmark < Sinatra::Base
 			erb :"sessions/new"
 		end
 	end	
+
+	delete '/sessions' do
+
+		flash[:notice]    = "Good bye!"
+		session[:user_id] = nil
+
+		redirect to '/'
+	end
+
 end
 
 
