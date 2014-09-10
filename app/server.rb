@@ -141,9 +141,11 @@ class Bookmark < Sinatra::Base
 	end
 
 	post '/users/confirm_password_reset' do
+		# raise params.inspect
 		user = User.first(:password_token => params[:password_token])
 		user.password = params[:password]
-		user.save
+		user.password_confirmation = params[:password_confirmation]
+		user.save!
 		
 		flash[:notice] = "Your password has been changed"
 

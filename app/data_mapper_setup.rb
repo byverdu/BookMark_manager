@@ -8,4 +8,4 @@ require './lib/user'
 
 DataMapper.finalize
 
-DataMapper.auto_migrate!
+# DataMapper.auto_migrate!
