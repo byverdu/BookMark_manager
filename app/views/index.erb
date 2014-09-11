@@ -1,24 +1,4 @@
-<ul>
-	<% @links.each do |link| %>
-	<li><a href="<%= link.url %>"> <%= link.title %></a></li>
-	<% link.tags.each do |tag| %>
-	<li><%= tag.text %></li>
-	
-	<% end %>
-	<% end %>
-</ul>
-
-
-<div id="new_link">
-	<form action="/links" method="post">
-		
-		URL:   <input type="text" name="url">
-		Title: <input type="text" name="title">
-		Tags:  <input type="text" name="tags">
-		
-		<input type="submit" value="Add link">
-	</form>
-</div>
-
-<a href="/sessions/new">Sign In</a>
-<a href="/users/new">Sign Up</a>
+<section class="index">
+	<a href="/sessions/new">Sign In</a>
+	<a href="/users/new"   >Sign Up</a>
+</section>

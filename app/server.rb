@@ -10,7 +10,7 @@ require_relative 'send_mail'
 class Bookmark < Sinatra::Base
 
 	include ApplicationHelpers
-    include SendMail
+  include SendMail
 
 	set :views, File.join(root,'views')
 	set :session_secret, 'super secret'
@@ -21,10 +21,15 @@ class Bookmark < Sinatra::Base
 	use Rack::MethodOverride
 
 	get '/' do
-		@links = Link.all
-
 		erb :index
 	end
+
+	get '/content' do
+		@links = Link.all
+
+		erb :content
+	end
+
 
 	post '/links' do
 
@@ -38,7 +43,7 @@ class Bookmark < Sinatra::Base
 
 		Link.create(:url => url, :title => title, :tags => tags)
 
-		redirect to('/')
+		redirect to('/content')
 	end
 
 
@@ -47,7 +52,7 @@ class Bookmark < Sinatra::Base
 		tag    = Tag.first(:text => params[:text])
 		@links = tag ? tag.links : []
 
-		erb :index
+		erb :content
 	end
 
 
@@ -58,12 +63,12 @@ class Bookmark < Sinatra::Base
 
 	post '/users' do
 		@user = User.create(email:                 params[:email],
-                            password:              params[:password],
-				            password_confirmation: params[:password_confirmation])
+                        password:              params[:password],
+				                password_confirmation: params[:password_confirmation])
 
 		if @user.save
-			session[:user_id] = @user.id
-			redirect to('/')
+			session[:user_id]  = @user.id
+			redirect to('/content')
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			erb :"users/new"
@@ -83,7 +88,7 @@ class Bookmark < Sinatra::Base
 
 		if user
 			session[:user_id] = user.id
-			redirect to '/'
+			redirect to '/content'
 		else
 			flash[:errors]    = ["The email or password is incorrect"]
 			erb :"sessions/new"
@@ -95,7 +100,7 @@ class Bookmark < Sinatra::Base
 		flash[:notice]    = "Good bye!"
 		session[:user_id] = nil
 
-		redirect to '/sessions/new'
+		redirect to '/'
 	end
 
 	get '/users/reset_password' do
@@ -104,7 +109,7 @@ class Bookmark < Sinatra::Base
 
 	post '/users/reset_password' do
 		email = params[:email]
-		user = User.first(:email => email)
+		user  = User.first(:email => email)
 
 		if !user.nil?
 			user.password_token           = (1..64).map { ('A'..'Z').to_a.sample }.join
@@ -153,7 +158,7 @@ class Bookmark < Sinatra::Base
 		
 		flash[:notice]             = "Your password has been changed"
 
-		redirect to '/'
+		redirect to '/content'
 	end
 end
 
