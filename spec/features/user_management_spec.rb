@@ -2,6 +2,28 @@ require_relative 'helpers/session'
 
 include SessionHelpers
 
+feature "When visiting the page" do
+
+	scenario "you will be able to can sign in" do
+		visit '/'
+
+		expect(page).to have_content('Sign In')
+		click_link('Sign In')
+
+		expect(page.current_path).to eq('/sessions/new')
+	end	
+
+	scenario "you will be able to can sign up" do
+		visit '/'
+		
+		expect(page).to have_content('Sign Up')
+		click_link('Sign Up')
+
+		expect(page.current_path).to eq('/users/new')
+	end
+end
+
+
 feature "User signs up" do
 
 	scenario "when being logged out" do
@@ -36,9 +58,9 @@ end
 feature "User signs in" do
 	
 	before(:each) do
-		User.create(:email => "test@test.com",
-			password: 'test',
-			password_confirmation: 'test')
+		User.create(email: 								 'test@test.com',
+								password: 						 'test',
+								password_confirmation: 'test')
 	end
 
 	scenario "with correct credentials" do

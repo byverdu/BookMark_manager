@@ -8,6 +8,6 @@ module SendMail
       :to      => "#{email}",
       :subject => "Recovering email password",
       :text    => "Dear #{email}, use this link to reset your password \n 
-                http://localhost:3434/users/reset_password/#{token}"
+                http://localhost:9292/users/reset_password/#{token}"
     end
 end

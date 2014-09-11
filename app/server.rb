@@ -34,7 +34,6 @@ class Bookmark < Sinatra::Base
 		tags  = params["tags"].split(", ").map do |tag|
 
 			Tag.first_or_create(:text => tag)
-
 		end
 
 		Link.create(:url => url, :title => title, :tags => tags)
@@ -96,7 +95,7 @@ class Bookmark < Sinatra::Base
 		flash[:notice]    = "Good bye!"
 		session[:user_id] = nil
 
-		redirect to '/'
+		redirect to '/sessions/new'
 	end
 
 	get '/users/reset_password' do
@@ -108,14 +107,14 @@ class Bookmark < Sinatra::Base
 		user = User.first(:email => email)
 
 		if !user.nil?
-			puts user.password_token           = (1..64).map { ('A'..'Z').to_a.sample }.join
-			puts user.password_token_timestamp = Time.now
+			user.password_token           = (1..64).map { ('A'..'Z').to_a.sample }.join
+			user.password_token_timestamp = Time.now
 			user.save
             
-            SendMail.new.email_confirmation(email,user.password_token)
+      email_confirmation(email,user.password_token)
             
 			flash[:notice] = "A confirmation email has been sent to your account"
-			redirect to '/'
+			redirect to '/sessions/new'
 		else
 			flash[:errors] = ["This email has not been registered"]
 			erb :"sessions/new"
@@ -146,6 +145,7 @@ class Bookmark < Sinatra::Base
 	end
 
 	post '/users/confirm_password_reset' do
+
 		user = User.first(:password_token => params[:password_token])
 		user.password              = params[:password]
 		user.password_confirmation = params[:password_confirmation]
