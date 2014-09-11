@@ -4,11 +4,13 @@ require "rack-flash"
 
 require_relative 'data_mapper_setup'
 require_relative 'helpers/application'
+require_relative 'send_mail'
 
 
 class Bookmark < Sinatra::Base
 
 	include ApplicationHelpers
+    include SendMail
 
 	set :views, File.join(root,'views')
 	set :session_secret, 'super secret'
@@ -56,9 +58,9 @@ class Bookmark < Sinatra::Base
 	end
 
 	post '/users' do
-		@user = User.create(:email          			 => params[:email],
-												:password              => params[:password],
-												:password_confirmation => params[:password_confirmation])
+		@user = User.create(email:                 params[:email],
+                            password:              params[:password],
+				            password_confirmation: params[:password_confirmation])
 
 		if @user.save
 			session[:user_id] = @user.id
@@ -109,6 +111,9 @@ class Bookmark < Sinatra::Base
 			puts user.password_token           = (1..64).map { ('A'..'Z').to_a.sample }.join
 			puts user.password_token_timestamp = Time.now
 			user.save
+            
+            SendMail.new.email_confirmation(email,user.password_token)
+            
 			flash[:notice] = "A confirmation email has been sent to your account"
 			redirect to '/'
 		else
@@ -141,7 +146,6 @@ class Bookmark < Sinatra::Base
 	end
 
 	post '/users/confirm_password_reset' do
-		# raise params.inspect
 		user = User.first(:password_token => params[:password_token])
 		user.password              = params[:password]
 		user.password_confirmation = params[:password_confirmation]
