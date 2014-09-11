@@ -6,7 +6,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'rack-flash3'
 gem 'sinatra'
-gem 'rest_client'
+gem 'mailgun'
 
 
 group :development, :test do
