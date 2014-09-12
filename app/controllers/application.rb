@@ -1,3 +1,4 @@
+# Controller for home page
 
 class Bookmark < Sinatra::Base
 

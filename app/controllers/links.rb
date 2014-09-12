@@ -1,3 +1,5 @@
+# Controller for adding links
+
 class Bookmark < Sinatra::Base
 
 	get '/content' do

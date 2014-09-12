@@ -1,3 +1,5 @@
+# Controller for all the sessions
+
 class Bookmark < Sinatra::Base
 
 	get '/sessions/new' do

@@ -1,3 +1,4 @@
+
 class Bookmark < Sinatra::Base
 
 	get "/users/new" do
@@ -19,7 +20,7 @@ class Bookmark < Sinatra::Base
 		end
 	end
 
-	
+
 	get '/users/reset_password' do
 		erb :"users/reset_password"
 	end

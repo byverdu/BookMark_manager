@@ -1,3 +1,5 @@
+# Controller for searching by tag
+
 class Bookmark < Sinatra::Base
 
 		get '/tags/:text' do
