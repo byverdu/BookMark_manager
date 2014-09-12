@@ -27,9 +27,10 @@ class Bookmark < Sinatra::Base
 	include ApplicationHelpers
   include SendMail
 
-	set :views, File.join(root, '..', 'views')
-	set :session_secret, 'super secret'
+	set :views,         Proc.new{ File.join(File.dirname(__FILE__), "views" ) }
+	set :public_folder, Proc.new{ File.join(File.dirname(__FILE__), "public") }
 	set :partial_template_engine, :erb
+	set :session_secret, 'super secret'
 	
 	enable :sessions
 
