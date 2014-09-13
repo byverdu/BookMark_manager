@@ -1,0 +1,17 @@
+<li class='link'>
+  <a class='link_title' href="<%= link.url %>"><%= link.title %></a>
+
+  <div class='description'>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </div>
+  <span class='source'>
+    Added today by
+    <a href="#">byverdu@gmail.com</a>
+  </span>
+</li>
+<li class="tag_wrap">
+<% link.tags.each do |tag| %>
+	<span class=" fa fa-tag tag"><%= tag.text %></span>
+<% end %>
+</li>
+		

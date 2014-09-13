@@ -13,6 +13,10 @@
 /*google  fonts*/
 /* SCSS variables */
 /* Reusable blocks */
+/* Amends */
+.fa-plus {
+  font-size: 14px !important; }
+
 /* Style rules */
 body {
   background: url(images/back.png); }
@@ -24,15 +28,16 @@ body {
   top: 50px; }
 
 .wrap_look {
-  font-family: "Ubuntu Mono";
+  font-family: "Ubuntu Mono" !important;
   border: 1px solid;
   box-shadow: 1px 1px 50px black;
   background: whitesmoke; }
 
+/* Buttons style */
 .shape_btn {
-  border: 2px solid white;
+  border: 2px solid #535353;
   display: inline-block;
-  width: 70px;
+  width: 90px;
   padding: 6px;
   height: 15px;
   border-radius: 20px;
@@ -44,40 +49,82 @@ body {
   color: #535353;
   box-shadow: 1px 1px 1px, -1px -1px 1px; }
   .look_btn:hover {
-    color: white;
-    background: #535353;
+    color: #F54A08;
+    background: #ffffff;
     box-shadow: none; }
 
+/* Top header styles */
 .top_head {
   height: 80px;
-  background: #4FF579;
+  background: #F5E168;
   display: flex;
   padding: 0 5px;
   box-shadow: 1px 1px 1px; }
   .top_head .title {
     font: 50px "Indie Flower", cursive;
-    color: #535353;
+    color: #ffffff;
     display: inherit;
     position: relative;
     left: 20px; }
   .top_head .btn_btn {
     height: 31px;
-    background: transparent; }
+    background: transparent;
+    font-size: 14px; }
     .top_head .btn_btn:hover {
       cursor: pointer; }
     .top_head .btn_btn:hover {
-      background: #535353; }
+      background: #ffffff; }
   .top_head aside {
     display: inherit;
     margin: 0 auto; }
 
+/* Link styles */
+.link_wrap {
+  width: 700px;
+  margin: 0 auto;
+  padding: 5%; }
+  .link_wrap li {
+    list-style: none; }
+  .link_wrap .link {
+    background-color: #EEE;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    margin: 10px inherit;
+    padding: 15px 10px;
+    height: 100px; }
+    .link_wrap .link a {
+      text-decoration: none;
+      letter-spacing: 1px;
+      color: #F54A08; }
+      .link_wrap .link a:hover {
+        text-decoration: underline; }
+    .link_wrap .link .description {
+      margin: 10px inherit; }
+    .link_wrap .link .source {
+      position: relative;
+      top: 20px; }
+  .link_wrap .tag_wrap {
+    position: relative;
+    top: -40px;
+    right: 10px;
+    width: 300px;
+    float: right; }
+    .link_wrap .tag_wrap .tag {
+      border: 1px solid;
+      padding: 4px;
+      border-radius: 5px;
+      background: #F54A08;
+      color: white;
+      text-shadow: 0px 1px black;
+      box-shadow: 0 0 3px black; }
+
 .new_link .btn_btn {
+  border: 2px solid #ffffff;
   height: 31px;
-  background: transparent; }
+  background: transparent;
+  font-size: 14px; }
   .new_link .btn_btn:hover {
     cursor: pointer; }
   .new_link .btn_btn:hover {
-    background: #4FF579;
-    border: 2px solid #535353; }
+    background: #F5E168; }
 
 /*# sourceMappingURL=style.css.map */

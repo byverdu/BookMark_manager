@@ -21,8 +21,10 @@
 $width :     800px;
 $head_font:  'Indie Flower', cursive;
 $main_font:  'Ubuntu Mono';
-$head_col_text: #535353;
-$head_col_bg:   #4FF579;
+$head_col_shad: #535353;
+$head_col_text: #ffffff;
+$head_col_bg:   #F5E168;
+$link_color:    #F54A08;
 $box-shadow: 1px 1px 1px;
 
 /* Reusable blocks */
@@ -30,8 +32,15 @@ $box-shadow: 1px 1px 1px;
 @mixin new_btn(){
 	height: 31px;
 	background: transparent;
+	font-size: 14px;
 
 	&:hover {cursor: pointer;}
+}
+
+/* Amends */
+
+.fa-plus{
+	font-size: 14px !important;
 }
 
 
@@ -49,16 +58,19 @@ body{
 }
 
 .wrap_look{
-	font-family: $main_font;
+	font-family: $main_font !important;
 	border: 1px solid;
 	box-shadow: 1px 1px 50px black;
 	background: whitesmoke;
 }
 
+
+/* Buttons style */
+
 .shape_btn{
-  border: 2px solid white;
+  border: 2px solid $head_col_shad;
   display: inline-block;
-  width: ($width/10)-10;
+  width: ($width/10)+10;
   padding: 6px;
   height: ($width/40)-5;
   border-radius: 20px;
@@ -68,15 +80,17 @@ body{
 .look_btn{
   text-decoration: none;
   text-align: center;
-  color: $head_col_text;
+  color: $head_col_shad;
   box-shadow: $box-shadow, -1px -1px 1px;
       
   &:hover{
-      color: white;
+      color: $link_color;
       background: $head_col_text;
       box-shadow: none;
   }
 }
+
+/* Top header styles */
 
 .top_head{
 	height: ($width/10);
@@ -106,14 +120,62 @@ body{
   }
 }
 
+/* Link styles */
+
+.link_wrap{
+	width: ($width)-100;
+	margin: 0 auto;
+	padding: 5%;
+	
+	li { list-style: none; }
+	
+	.link{
+		background-color: #EEE;
+		box-shadow: 0 0 5px rgba(0,0,0,0.4);
+		margin: 10px inherit;
+		padding: 15px 10px;
+		height: 100px;
+		
+		a{
+			text-decoration: none;
+			letter-spacing: 1px;
+			color: $link_color;
+
+			&:hover{text-decoration: underline;}
+		}
+
+		.description{margin: 10px inherit}
+		
+		.source{position:relative; top: 20px;}
+	}
+
+	.tag_wrap{
+		position: relative;
+		top: -40px;
+		right: 10px;
+		width: 300px;
+		float: right;
+
+		.tag{
+			border: 1px solid;
+			padding: 4px;
+			border-radius: 5px;
+			background: $link_color;
+			color: white;
+			text-shadow: 0px 1px black;
+			box-shadow: 0 0 3px black;
+		}
+	}
+}
+
 .new_link{
 	
 	.btn_btn{
+  	border: 2px solid $head_col_text; 
 
 		@include new_btn;
 
   	&:hover{ background: $head_col_bg; 
-  					 border: 2px solid $head_col_text  
   	}  
   }	
 }
