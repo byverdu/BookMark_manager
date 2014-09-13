@@ -1,4 +1,83 @@
+/************
+
+ BookMark manager Styles 
+
+*************/
+/* CSS reset */
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
 * {
-  color: red; }
+  margin: 0;
+  padding: 0; }
+
+/*google  fonts*/
+/* SCSS variables */
+/* Reusable blocks */
+/* Style rules */
+body {
+  background: url(images/back.png); }
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+  top: 50px; }
+
+.wrap_look {
+  font-family: "Ubuntu Mono";
+  border: 1px solid;
+  box-shadow: 1px 1px 50px black;
+  background: whitesmoke; }
+
+.shape_btn {
+  border: 2px solid white;
+  display: inline-block;
+  width: 70px;
+  padding: 6px;
+  height: 15px;
+  border-radius: 20px;
+  margin: 20px; }
+
+.look_btn {
+  text-decoration: none;
+  text-align: center;
+  color: #535353;
+  box-shadow: 1px 1px 1px, -1px -1px 1px; }
+  .look_btn:hover {
+    color: white;
+    background: #535353;
+    box-shadow: none; }
+
+.top_head {
+  height: 80px;
+  background: #4FF579;
+  display: flex;
+  padding: 0 5px;
+  box-shadow: 1px 1px 1px; }
+  .top_head .title {
+    font: 50px "Indie Flower", cursive;
+    color: #535353;
+    display: inherit;
+    position: relative;
+    left: 20px; }
+  .top_head .btn_btn {
+    height: 31px;
+    background: transparent; }
+    .top_head .btn_btn:hover {
+      cursor: pointer; }
+    .top_head .btn_btn:hover {
+      background: #535353; }
+  .top_head aside {
+    display: inherit;
+    margin: 0 auto; }
+
+.new_link .btn_btn {
+  height: 31px;
+  background: transparent; }
+  .new_link .btn_btn:hover {
+    cursor: pointer; }
+  .new_link .btn_btn:hover {
+    background: #4FF579;
+    border: 2px solid #535353; }
 
 /*# sourceMappingURL=style.css.map */

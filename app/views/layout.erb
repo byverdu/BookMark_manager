@@ -7,22 +7,14 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
-	<% if current_user %>
-
-		Welcome, <%= current_user.email %>
+	
+	<div class="wrapper wrap_look">
 		
-		<form action="/sessions" method="post">
-			
-			<input type="hidden" name="_method" value="delete">
-			<input type="submit" value="Sign Out">
-		</form>
-	<% end %>
-	
-	<%= partial :"partials/_header" %>
-	<%= partial :"partials/_notice" %>
-	
-	<%=yield%>
+		<%= partial :"partials/_header" %>
+		<%= partial :"partials/_notice" %>	
+
+		<%=yield%>
+	</div>
 
 </body>
 </html>

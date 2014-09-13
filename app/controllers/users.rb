@@ -13,7 +13,7 @@ class Bookmark < Sinatra::Base
 
 		if @user.save
 			session[:user_id]  = @user.id
-			redirect to('/')
+			redirect to('/links/new')
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			erb :"users/new"

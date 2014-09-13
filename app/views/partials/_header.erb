@@ -1,11 +1,22 @@
-	<% if current_user %>
+<header class="top_head">
+    <h1 class="title">BookMark Manager</h1>
 
-		Welcome, <%= current_user.email %>
-		
-		<form action="/sessions" method="post">
-			
-			<input type="hidden" name="_method" value="delete">
-			<input type="submit" value="Sign out">
-		</form>
-	<% end %>
-	
+        <% if current_user %>
+
+            <mark>Welcome, <%= current_user.email %></mark>
+
+            <form  action="/sessions" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button class="shape_btn look_btn btn_btn" type="submit">Sign Out</button>
+            </form>
+            
+            <a class="shape_btn look_btn" href="/links/new">    Add Link</a>
+
+        <% else %>
+           <aside>
+               <a class="shape_btn look_btn" href="/sessions/new"> Sign In </a>
+               <a class="shape_btn look_btn" href="/users/new">    Sign Up </a>
+           </aside>
+
+        <% end %>
+</header>

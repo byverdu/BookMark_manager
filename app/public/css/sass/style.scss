@@ -1,3 +1,121 @@
+/************
+
+ BookMark manager Styles 
+
+*************/
+
+/* CSS reset */
+
 *{
-	color: red;
+	margin: 0;
+	padding: 0;
 }
+
+/*google  fonts*/
+
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+
+/* SCSS variables */
+
+$width :     800px;
+$head_font:  'Indie Flower', cursive;
+$main_font:  'Ubuntu Mono';
+$head_col_text: #535353;
+$head_col_bg:   #4FF579;
+$box-shadow: 1px 1px 1px;
+
+/* Reusable blocks */
+
+@mixin new_btn(){
+	height: 31px;
+	background: transparent;
+
+	&:hover {cursor: pointer;}
+}
+
+
+/* Style rules */
+
+body{
+    background: url(images/back.png)
+}
+
+.wrapper{
+	width: $width;
+	margin: 0 auto;
+  position: relative;
+  top: 50px;
+}
+
+.wrap_look{
+	font-family: $main_font;
+	border: 1px solid;
+	box-shadow: 1px 1px 50px black;
+	background: whitesmoke;
+}
+
+.shape_btn{
+  border: 2px solid white;
+  display: inline-block;
+  width: ($width/10)-10;
+  padding: 6px;
+  height: ($width/40)-5;
+  border-radius: 20px;
+  margin: ($width/40);
+}
+
+.look_btn{
+  text-decoration: none;
+  text-align: center;
+  color: $head_col_text;
+  box-shadow: $box-shadow, -1px -1px 1px;
+      
+  &:hover{
+      color: white;
+      background: $head_col_text;
+      box-shadow: none;
+  }
+}
+
+.top_head{
+	height: ($width/10);
+  background: $head_col_bg;
+  display: flex;
+  padding: 0 5px;
+  box-shadow: $box-shadow;
+  
+  .title{
+      font: (($width/20)+10) $head_font;
+      color: $head_col_text;
+      display: inherit;
+      position: relative;
+      left: $width/40;
+  }
+
+  .btn_btn{
+
+  	@include new_btn;
+
+  	&:hover{ background: $head_col_text }  
+  }
+
+  aside{
+      display: inherit;
+      margin: 0 auto;
+  }
+}
+
+.new_link{
+	
+	.btn_btn{
+
+		@include new_btn;
+
+  	&:hover{ background: $head_col_bg; 
+  					 border: 2px solid $head_col_text  
+  	}  
+  }	
+}
+
+

@@ -2,13 +2,6 @@
 
 class Bookmark < Sinatra::Base
 
-	get '/content' do
-		@links = Link.all
-
-		erb :content
-	end
-
-
 	post '/links' do
 
 		url   = params["url"]
@@ -21,6 +14,10 @@ class Bookmark < Sinatra::Base
 
 		Link.create(:url => url, :title => title, :tags => tags)
 
-		redirect to('/content')
+		redirect to('/')
 	end
+    
+    get '/links/new' do
+        erb :'links/new'    
+    end
 end	
