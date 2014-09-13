@@ -4,7 +4,7 @@
 
 *************/
 /* CSS reset */
-@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
 * {
   margin: 0;
@@ -61,11 +61,14 @@ body {
   padding: 0 5px;
   box-shadow: 1px 1px 1px; }
   .top_head .title {
-    font: 50px "Indie Flower", cursive;
+    font: 70px "Amatic SC", cursive;
     color: #ffffff;
     display: inherit;
     position: relative;
-    left: 20px; }
+    left: 20px;
+    letter-spacing: 5px; }
+  .top_head form {
+    margin-left: 40px; }
   .top_head .btn_btn {
     height: 31px;
     background: transparent;
@@ -77,6 +80,11 @@ body {
   .top_head aside {
     display: inherit;
     margin: 0 auto; }
+  .top_head .greet {
+    width: 300px;
+    position: absolute;
+    top: 55px;
+    right: -14px; }
 
 /* Link styles */
 .link_wrap {
@@ -118,13 +126,38 @@ body {
       box-shadow: 0 0 3px black; }
 
 .new_link .btn_btn {
-  border: 2px solid #ffffff;
+  border: 2px solid #535353;
   height: 31px;
   background: transparent;
   font-size: 14px; }
   .new_link .btn_btn:hover {
     cursor: pointer; }
   .new_link .btn_btn:hover {
-    background: #F5E168; }
+    background: #ffffff; }
+.new_link form {
+  color: red; }
+
+.notice {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(67, 183, 120, 0.75);
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+/* Footer */
+footer {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99999; }
+  footer img {
+    /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
+    vertical-align: top; }
+  footer #technologies {
+    -webkit-flex: 1;
+    flex: 1; }
+  footer p {
+    padding: 5px 25px; }
 
 /*# sourceMappingURL=style.css.map */

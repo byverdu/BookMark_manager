@@ -13,13 +13,13 @@
 
 /*google  fonts*/
 
-@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
 
 /* SCSS variables */
 
 $width :     800px;
-$head_font:  'Indie Flower', cursive;
+$head_font:  'Amatic SC', cursive;
 $main_font:  'Ubuntu Mono';
 $head_col_shad: #535353;
 $head_col_text: #ffffff;
@@ -100,12 +100,15 @@ body{
   box-shadow: $box-shadow;
   
   .title{
-      font: (($width/20)+10) $head_font;
+      font: (($width/10)-10) $head_font;
       color: $head_col_text;
       display: inherit;
       position: relative;
       left: $width/40;
+      letter-spacing: 5px;
   }
+
+  form { margin-left: 40px; }
 
   .btn_btn{
 
@@ -117,6 +120,13 @@ body{
   aside{
       display: inherit;
       margin: 0 auto;
+  }
+
+  .greet{
+  	width: 300px;
+		position: absolute;
+		top: 55px;
+		right: -14px;
   }
 }
 
@@ -171,13 +181,48 @@ body{
 .new_link{
 	
 	.btn_btn{
-  	border: 2px solid $head_col_text; 
+  	border: 2px solid $head_col_shad; 
 
 		@include new_btn;
 
-  	&:hover{ background: $head_col_bg; 
+  	&:hover{ background: $head_col_text; 
   	}  
+  }
+
+  form{
+  	color: red;
   }	
 }
 
+.notice{
+	text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(67,183,120,0.75);
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  color: white;
+}
 
+/* Footer */
+
+footer {
+  display: flex;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 99999;
+	
+	img {
+    /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
+    vertical-align: top;
+  }
+
+  #technologies {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  p {
+    padding: 5px 25px;
+  }
+
+}

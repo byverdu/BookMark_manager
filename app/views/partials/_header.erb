@@ -3,7 +3,7 @@
 
         <% if current_user %>
 
-            <mark>Welcome, <%= current_user.email %></mark>
+            <span class="greet">Welcome, <%= current_user.email %></span>
 
             <form  action="/sessions" method="post">
                 <input type="hidden" name="_method" value="delete">
