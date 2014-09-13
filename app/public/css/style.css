@@ -25,7 +25,8 @@ body {
   width: 800px;
   margin: 0 auto;
   position: relative;
-  top: 50px; }
+  top: 50px;
+  min-height: 250px; }
 
 .wrap_look {
   font-family: "Ubuntu Mono" !important;
@@ -145,6 +146,38 @@ body {
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   color: white; }
+
+/* Styling forms */
+.wrap_sig_in {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  width: 420px;
+  padding: 3%; }
+  .wrap_sig_in h2 {
+    position: inherit;
+    top: -20px; }
+    .wrap_sig_in h2:first-letter {
+      font-size: 40px; }
+  .wrap_sig_in a {
+    float: right;
+    position: inherit;
+    top: -50px;
+    text-decoration: none;
+    right: 40px;
+    color: #F54A08;
+    font-size: 20px; }
+    .wrap_sig_in a:hover {
+      text-decoration: underline; }
+  .wrap_sig_in .btn_btn {
+    border: 2px solid #535353;
+    height: 31px;
+    background: transparent;
+    font-size: 14px; }
+    .wrap_sig_in .btn_btn:hover {
+      cursor: pointer; }
+    .wrap_sig_in .btn_btn:hover {
+      background: #ffffff; }
 
 /* Footer */
 footer {

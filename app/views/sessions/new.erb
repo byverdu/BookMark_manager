@@ -1,11 +1,13 @@
-<p>Please sign in</p>
+<section class="wrap_sig_in">
+	<h2>Please sign in</h2>
 
-<form action="/sessions" method="post">
-	
-	Email:     <input type="text" name="email">
-	Password:  <input type="password" name="password">
-	
-	<input type="submit" value="Sign in">
-</form>
+	<form action="/sessions" method="post">
+		
+		Email:     <input type="text" name="email">
+		Password:  <input type="password" name="password">
+		
+		<button class="shape_btn look_btn btn_btn" type="submit">Sign in</button>
+	</form>
 
-<a href="/users/reset_password">forgotten password?</a>
+	<a href="/users/reset_password"><i class="fa fa-hand-o-right"></i>Forgotten password?</a>
+</section>
