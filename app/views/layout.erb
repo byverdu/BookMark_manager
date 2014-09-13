@@ -7,6 +7,17 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
+	<% if current_user %>
+
+		Welcome, <%= current_user.email %>
+		
+		<form action="/sessions" method="post">
+			
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Sign Out">
+		</form>
+	<% end %>
 	
 	<%= partial :"partials/_header" %>
 	<%= partial :"partials/_notice" %>

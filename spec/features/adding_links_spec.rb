@@ -2,7 +2,7 @@ feature "User adds a new link" do
 
   scenario "when browsing the homepage" do
     expect(Link.count).to eq(0)
-    visit '/content'
+    visit '/'
     add_link("http://www.makersacademy.com/", "Makers Academy", ["education","ruby"])
     expect(Link.count).to eq(1)
   
@@ -12,7 +12,7 @@ feature "User adds a new link" do
   end
 
   scenario "with a few tags" do
-  	visit '/content'
+  	visit '/'
 
   	add_link("http://www.makersacademy.com/","Makers Academy",["education","ruby"])
 

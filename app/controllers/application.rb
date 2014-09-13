@@ -2,9 +2,8 @@
 
 class Bookmark < Sinatra::Base
 
-	#set :views, File.join(root,'views')
-
 	get '/' do
+		@links = Link.all
 		erb :index
 	end
 

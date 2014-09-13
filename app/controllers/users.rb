@@ -13,7 +13,7 @@ class Bookmark < Sinatra::Base
 
 		if @user.save
 			session[:user_id]  = @user.id
-			redirect to('/content')
+			redirect to('/')
 		else
 			flash.now[:errors] = @user.errors.full_messages
 			erb :"users/new"
@@ -76,6 +76,6 @@ class Bookmark < Sinatra::Base
 		
 		flash[:notice]             = "Your password has been changed"
 
-		redirect to '/content'
+		redirect to '/sessions/new'
 	end
 end

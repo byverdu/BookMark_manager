@@ -2,26 +2,26 @@ require_relative 'helpers/session'
 
 include SessionHelpers
 
-feature "When visiting the page" do
+# feature "When visiting the page" do
 
-	scenario "you will be able to can sign in" do
-		visit '/'
+# 	scenario "you will be able to can sign in" do
+# 		visit '/'
 
-		expect(page).to have_content('Sign In')
-		click_link('Sign In')
+# 		expect(page).to have_content('Sign In')
+# 		click_link('Sign In')
 
-		expect(page.current_path).to eq('/sessions/new')
-	end	
+# 		expect(page.current_path).to eq('/sessions/new')
+# 	end	
 
-	scenario "you will be able to can sign up" do
-		visit '/'
+# 	scenario "you will be able to can sign up" do
+# 		visit '/'
 		
-		expect(page).to have_content('Sign Up')
-		click_link('Sign Up')
+# 		expect(page).to have_content('Sign Up')
+# 		click_link('Sign Up')
 
-		expect(page.current_path).to eq('/users/new')
-	end
-end
+# 		expect(page.current_path).to eq('/users/new')
+# 	end
+# end
 
 
 feature "User signs up" do
@@ -120,7 +120,7 @@ feature "User signs out" do
 	scenario "while being signed in" do
 		sign_in("test@test.com", "test")
 
-		click_button "Sign out"
+		click_button "Sign Out"
 
 		expect(page).to     have_content("Good bye!")
 		expect(page).not_to have_content("Welcome, test@test.com")

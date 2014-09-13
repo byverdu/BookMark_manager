@@ -7,7 +7,7 @@ class Bookmark < Sinatra::Base
 		tag    = Tag.first(:text => params[:text])
 		@links = tag ? tag.links : []
 
-		erb :content
+		erb :index
 	end
 
 end
