@@ -1,10 +1,10 @@
 <section class="wrap_sign_up">
-	<h2>Please sign up</h2>
+	<h2>Please sign up <i class="fa fa-send"></i></h2>
 
 	<form action="/users" method="post">
-	Email: <input type="text" name="email" value="<%= @user.email %>">
-	Password: <input type="password" name="password">
-	Password confirmation: <input type="password" name="password_confirmation">
+	<input type="text" name="email" value="<%= @user.email %>" placeholder="Email">
+	<input type="password" name="password" placeholder="Password">
+	<input type="password" name="password_confirmation" placeholder="Confirm Password">
 
 	<button class="look_btn shape_btn btn_btn" type="submit">Sign up</button>
 	</form>

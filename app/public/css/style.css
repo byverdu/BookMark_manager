@@ -102,8 +102,8 @@ body {
     height: 100px; }
     .link_wrap .link a {
       text-decoration: none;
-      letter-spacing: 1px;
-      color: #F54A08; }
+      color: #F54A08;
+      letter-spacing: 1px; }
       .link_wrap .link a:hover {
         text-decoration: underline; }
     .link_wrap .link .description {
@@ -160,12 +160,13 @@ body {
     .wrap_sig_in h2:first-letter {
       font-size: 40px; }
   .wrap_sig_in a {
+    text-decoration: none;
+    color: #F54A08;
+    letter-spacing: 1px;
     float: right;
     position: inherit;
     top: -50px;
-    text-decoration: none;
     right: 40px;
-    color: #F54A08;
     font-size: 20px; }
     .wrap_sig_in a:hover {
       text-decoration: underline; }
@@ -192,7 +193,10 @@ body {
       font-size: 40px; }
   .wrap_sign_up input {
     display: block;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center; }
   .wrap_sign_up button {
     float: right;
     position: relative;
@@ -212,7 +216,16 @@ body {
 footer {
   display: flex;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 99999; }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font: 15px "Ubuntu Mono"; }
+  footer a {
+    text-decoration: none;
+    color: #F54A08;
+    letter-spacing: 1px; }
+    footer a:hover {
+      text-decoration: underline; }
   footer img {
     /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
     vertical-align: top; }

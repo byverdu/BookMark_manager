@@ -59,12 +59,12 @@ feature "User signs in" do
 		
 	end
 
-	scenario "forgotten password" do
+	scenario "Forgotten password" do
 
 		visit '/sessions/new'
 
-		expect(page).to have_content('forgotten password?')
-		click_link("forgotten password?")
+		expect(page).to have_content('Forgotten password?')
+		click_link("Forgotten password?")
 		expect(page.current_path).to eq '/users/reset_password'
 
 		expect(page).to have_field("email")

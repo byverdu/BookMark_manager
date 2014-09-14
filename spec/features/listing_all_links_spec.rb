@@ -20,7 +20,7 @@ feature "User browses the list of links" do
 
 		scenario "When opening the user home page" do
 			visit '/'
-			expect(page).to have_content("Makers Academy")
+			expect(page).to have_content("BookMark Manager")
 		end
 
 		scenario "filtered by tag" do

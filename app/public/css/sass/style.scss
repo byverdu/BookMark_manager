@@ -48,7 +48,14 @@ $box-shadow: 1px 1px 1px;
 		
 		&:first-letter{ font-size: 40px}
 	}
+}
 
+@mixin link_style{
+	text-decoration: none;
+	color: $link_color;
+	letter-spacing: 1px;
+
+	&:hover{text-decoration: underline;}
 }
 
 /* Amends */
@@ -160,14 +167,8 @@ body{
 		margin: 10px inherit;
 		padding: 15px 10px;
 		height: 100px;
-		
-		a{
-			text-decoration: none;
-			letter-spacing: 1px;
-			color: $link_color;
-
-			&:hover{text-decoration: underline;}
-		}
+	
+		a { @include link_style; }
 
 		.description{margin: 10px inherit}
 		
@@ -192,6 +193,7 @@ body{
 		}
 	}
 }
+
 
 .new_link{
 	
@@ -221,21 +223,25 @@ body{
 
 /* Styling forms */
 
+@mixin link_style{
+	text-decoration: none;
+	color: $link_color;
+	letter-spacing: 1px;
+
+	&:hover{text-decoration: underline;}
+}
+
 .wrap_sig_in{
 
 	@include position_sign;
-
-
+	
 	a{
+		@include link_style;
 		float: right;
 		position: inherit;
 		top: -50px;
-		text-decoration: none;
 		right: 40px;
-		color: $link_color;
 		font-size: 20px;
-
-		&:hover{text-decoration: underline;}
 	}
 
 	.btn_btn{
@@ -252,7 +258,13 @@ body{
 
 	@include position_sign;
 
-	input{ display: block;margin-bottom: 20px;}
+	input{ 
+		display: block;
+		margin-bottom: 20px;
+		height: 30px;
+		font-size: 18px;
+		text-align: center;
+	}
 
 	button{
 		float: right;
@@ -276,7 +288,13 @@ body{
 footer {
   display: flex;
   background-color: rgba(0,0,0,0.2);
-  z-index: 99999;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	font: 15px $main_font;
+	
+	a{ @include link_style; }
+
 	
 	img {
     /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
