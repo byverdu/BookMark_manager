@@ -26,9 +26,43 @@
 /* SCSS variables */
 /*google  fonts*/
 /* Reusable blocks */
+.message, .notice, .errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+.notice {
+  background-color: rgba(67, 183, 120, 0.75); }
+
+.errors {
+  background-color: rgba(245, 74, 8, 0.75); }
+
+.errors li {
+  list-style: none; }
+
 /* SCSS variables */
 /*google  fonts*/
 /* Reusable blocks */
+.message, .notice, .errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+.notice {
+  background-color: rgba(67, 183, 120, 0.75); }
+
+.errors {
+  background-color: rgba(245, 74, 8, 0.75); }
+
+.errors li {
+  list-style: none; }
+
 /* Style rules */
 body {
   background: url(images/back.png); }
@@ -49,6 +83,23 @@ body {
 /* SCSS variables */
 /*google  fonts*/
 /* Reusable blocks */
+.message, .notice, .errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+.notice {
+  background-color: rgba(67, 183, 120, 0.75); }
+
+.errors {
+  background-color: rgba(245, 74, 8, 0.75); }
+
+.errors li {
+  list-style: none; }
+
 /* Buttons style */
 .shape_btn {
   border: 2px solid #535353;
@@ -72,6 +123,23 @@ body {
 /* SCSS variables */
 /*google  fonts*/
 /* Reusable blocks */
+.message, .notice, .errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+.notice {
+  background-color: rgba(67, 183, 120, 0.75); }
+
+.errors {
+  background-color: rgba(245, 74, 8, 0.75); }
+
+.errors li {
+  list-style: none; }
+
 /* Top header styles */
 .top_head {
   height: 80px;
@@ -90,7 +158,7 @@ body {
     margin-left: 40px; }
   .top_head .btn_btn {
     height: 31px;
-    background: transparent;
+    background: #F5E168;
     font-size: 14px; }
     .top_head .btn_btn:hover {
       cursor: pointer; }
@@ -108,6 +176,23 @@ body {
 /* SCSS variables */
 /*google  fonts*/
 /* Reusable blocks */
+.message, .notice, .errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+.notice {
+  background-color: rgba(67, 183, 120, 0.75); }
+
+.errors {
+  background-color: rgba(245, 74, 8, 0.75); }
+
+.errors li {
+  list-style: none; }
+
 /* Link styles */
 .link_wrap {
   width: 700px;
@@ -147,30 +232,58 @@ body {
       text-shadow: 0px 1px black;
       box-shadow: 0 0 3px black; }
 
-.new_link .btn_btn {
-  border: 2px solid #535353;
-  height: 31px;
-  background: transparent;
-  font-size: 14px; }
-  .new_link .btn_btn:hover {
-    cursor: pointer; }
-  .new_link .btn_btn:hover {
-    background: #ffffff; }
-.new_link form {
-  color: red; }
-
-.notice {
-  text-align: center;
-  margin: 5px;
-  padding: 5px;
-  background-color: rgba(67, 183, 120, 0.75);
-  border-radius: 4px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-  color: white; }
+.new_link {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  width: 420px;
+  padding: 3%; }
+  .new_link h2 {
+    position: inherit;
+    top: -20px; }
+    .new_link h2:first-letter {
+      font-size: 40px; }
+  .new_link input {
+    display: block;
+    margin-bottom: 20px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 1px 1px 20px grey; }
+  .new_link .btn_btn {
+    float: right;
+    position: relative;
+    top: -126px;
+    right: 60px;
+    border: 2px solid #535353;
+    height: 31px;
+    background: #F5E168;
+    font-size: 14px; }
+    .new_link .btn_btn:hover {
+      cursor: pointer; }
+    .new_link .btn_btn:hover {
+      background: #ffffff; }
 
 /* SCSS variables */
 /*google  fonts*/
 /* Reusable blocks */
+.message, .notice, .errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+.notice {
+  background-color: rgba(67, 183, 120, 0.75); }
+
+.errors {
+  background-color: rgba(245, 74, 8, 0.75); }
+
+.errors li {
+  list-style: none; }
+
 /* Styling forms */
 .wrap_sig_in {
   position: relative;
@@ -183,21 +296,32 @@ body {
     top: -20px; }
     .wrap_sig_in h2:first-letter {
       font-size: 40px; }
+  .wrap_sig_in input {
+    display: block;
+    margin-bottom: 20px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 1px 1px 20px grey; }
   .wrap_sig_in a {
     text-decoration: none;
     color: #F54A08;
     letter-spacing: 1px;
     float: right;
     position: inherit;
-    top: -50px;
-    right: 40px;
+    top: -48px;
+    right: -150px;
     font-size: 20px; }
     .wrap_sig_in a:hover {
       text-decoration: underline; }
   .wrap_sig_in .btn_btn {
+    float: right;
+    position: relative;
+    top: -126px;
+    left: -40px;
     border: 2px solid #535353;
     height: 31px;
-    background: transparent;
+    background: #F5E168;
     font-size: 14px; }
     .wrap_sig_in .btn_btn:hover {
       cursor: pointer; }
@@ -220,7 +344,8 @@ body {
     margin-bottom: 20px;
     height: 30px;
     font-size: 18px;
-    text-align: center; }
+    text-align: center;
+    box-shadow: 1px 1px 20px grey; }
   .wrap_sign_up button {
     float: right;
     position: relative;
@@ -229,7 +354,7 @@ body {
   .wrap_sign_up .btn_btn {
     border: 2px solid #535353;
     height: 31px;
-    background: transparent;
+    background: #F5E168;
     font-size: 14px; }
     .wrap_sign_up .btn_btn:hover {
       cursor: pointer; }
@@ -253,7 +378,7 @@ body {
     height: 30px;
     font-size: 18px;
     text-align: center;
-    box-shadow: 1px 1px 20px; }
+    box-shadow: 1px 1px 20px grey; }
   .reset_pswd p {
     position: relative;
     top: -20px;
@@ -267,7 +392,7 @@ body {
     top: -72px;
     left: 230px;
     height: 31px;
-    background: transparent;
+    background: #F5E168;
     font-size: 14px; }
     .reset_pswd .btn_btn:hover {
       cursor: pointer; }
@@ -277,6 +402,23 @@ body {
 /* SCSS variables */
 /*google  fonts*/
 /* Reusable blocks */
+.message, .notice, .errors {
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: white; }
+
+.notice {
+  background-color: rgba(67, 183, 120, 0.75); }
+
+.errors {
+  background-color: rgba(245, 74, 8, 0.75); }
+
+.errors li {
+  list-style: none; }
+
 /* Footer */
 footer {
   display: flex;

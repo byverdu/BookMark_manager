@@ -44,8 +44,16 @@
 
 
 .new_link{
+
+	@include position_sign;
+
+	input{ @include input_style;}
 	
 	.btn_btn{
+		float: right;
+		position: relative;
+		top: -126px;
+		right: 60px;
   	border: 2px solid $head_col_shad; 
 
 		@include new_btn;
@@ -53,18 +61,7 @@
   	&:hover{ background: $head_col_text; 
   	}  
   }
-
-  form{
-  	color: red;
-  }	
+	
 }
 
-.notice{
-	text-align: center;
-  margin: 5px;
-  padding: 5px;
-  background-color: rgba(67,183,120,0.75);
-  border-radius: 4px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.4);
-  color: white;
-}
+

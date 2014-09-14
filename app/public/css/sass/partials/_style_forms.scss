@@ -5,19 +5,25 @@
 .wrap_sig_in{
 
 	@include position_sign;
+
+	input{ @include input_style;}
 	
 	a{
 		@include link_style;
 		float: right;
 		position: inherit;
-		top: -50px;
-		right: 40px;
+		top: -48px;
+		right: -150px;
 		font-size: 20px;
 	}
 
 	.btn_btn{
-  	border: 2px solid $head_col_shad; 
-
+  	float: right;
+		position: relative;
+		top: -126px;
+		left: -40px;
+		border: 2px solid $head_col_shad; 
+		
 		@include new_btn;
 
   	&:hover{ background: $head_col_text; 
@@ -52,7 +58,7 @@
 	
 	@include position_sign;
 
-	input{ @include input_style; box-shadow: 1px 1px 20px}
+	input{ @include input_style;}
 
 	p{
 		position: relative;
