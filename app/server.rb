@@ -22,15 +22,22 @@ require_relative './controllers/users'
 
 class Bookmark < Sinatra::Base
 
+	configure :production do
+  require 'newrelic_rpm'
+  end
+
+  configure do
+		set :views,         Proc.new{ File.join(File.dirname(__FILE__), "views" ) }
+		set :public_folder, Proc.new{ File.join(File.dirname(__FILE__), "public") }
+		set :partial_template_engine, :erb
+		set :session_secret, 'super secret'
+	end
+	
 	register Sinatra::Partial
 
 	include ApplicationHelpers
   include SendMail
 
-	set :views,         Proc.new{ File.join(File.dirname(__FILE__), "views" ) }
-	set :public_folder, Proc.new{ File.join(File.dirname(__FILE__), "public") }
-	set :partial_template_engine, :erb
-	set :session_secret, 'super secret'
 	
 	enable :sessions
 
