@@ -10,4 +10,4 @@ The website will have the following options:
 - Add tags to the links
 - Filter links by a tag
 
-
+This website is built using Ruby, Sinatra, RSpec, Capybara, SQL, SASS, HTML and CSS.
