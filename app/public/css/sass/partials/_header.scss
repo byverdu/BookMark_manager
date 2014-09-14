@@ -1,0 +1,42 @@
+@import "partials/base";
+
+
+/* Top header styles */
+
+.top_head{
+	height: ($width/10);
+  background: $head_col_bg;
+  display: flex;
+  padding: 0 5px;
+  box-shadow: $box-shadow;
+  
+  .title{
+      font: (($width/10)-10) $head_font;
+      color: $head_col_text;
+      display: inherit;
+      position: relative;
+      left: $width/40;
+      letter-spacing: 5px;
+  }
+
+  form { margin-left: 40px; }
+
+  .btn_btn{
+
+  	@include new_btn;
+
+  	&:hover{ background: $head_col_text }  
+  }
+
+  aside{
+      display: inherit;
+      margin: 0 auto;
+  }
+
+  .greet{
+  	width: 300px;
+		position: absolute;
+		top: 55px;
+		right: -14px;
+  }
+}

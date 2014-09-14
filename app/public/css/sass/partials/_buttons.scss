@@ -1,0 +1,26 @@
+@import "partials/base";
+
+/* Buttons style */
+
+.shape_btn{
+  border: 2px solid $head_col_shad;
+  display: inline-block;
+  width: ($width/10)+10;
+  padding: 6px;
+  height: ($width/40)-5;
+  border-radius: 20px;
+  margin: ($width/40);
+}
+
+.look_btn{
+  text-decoration: none;
+  text-align: center;
+  color: $head_col_shad;
+  box-shadow: $box-shadow, -1px -1px 1px;
+      
+  &:hover{
+      color: $link_color;
+      background: $head_col_text;
+      box-shadow: none;
+  }
+}

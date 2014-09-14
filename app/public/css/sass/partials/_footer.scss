@@ -1,0 +1,30 @@
+@import "partials/base";
+
+/* Footer */
+
+footer {
+  display: flex;
+  background-color: rgba(0,0,0,0.2);
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	font: 15px $main_font;
+	
+	a{ @include link_style; }
+
+	
+	img {
+    /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
+    vertical-align: top;
+  }
+
+  #technologies {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  p {
+    padding: 5px 25px;
+  }
+
+}

@@ -1,0 +1,78 @@
+@import "partials/base";
+
+/* Styling forms */
+
+.wrap_sig_in{
+
+	@include position_sign;
+	
+	a{
+		@include link_style;
+		float: right;
+		position: inherit;
+		top: -50px;
+		right: 40px;
+		font-size: 20px;
+	}
+
+	.btn_btn{
+  	border: 2px solid $head_col_shad; 
+
+		@include new_btn;
+
+  	&:hover{ background: $head_col_text; 
+  	}  
+  }
+}
+
+.wrap_sign_up{
+
+	@include position_sign;
+
+	input{ @include input_style;}
+
+	button{
+		float: right;
+		position: relative;
+		top: -140px;
+		right: 70px;
+	}
+
+	.btn_btn{
+  	border: 2px solid $head_col_shad; 
+
+		@include new_btn;
+
+  	&:hover{ background: $head_col_text; 
+  	}  
+  }
+}
+
+.reset_pswd{
+	
+	@include position_sign;
+
+	input{ @include input_style; box-shadow: 1px 1px 20px}
+
+	p{
+		position: relative;
+		top: -20px;
+		font-size: 24px;
+
+		&:first-letter{ font-size: 40px }
+	}
+	
+	.btn_btn{
+  	border: 2px solid $head_col_shad; 
+  	float: left;
+		position: relative;
+		top: -72px;
+		left: 230px;
+
+		@include new_btn;
+
+  	&:hover{ background: $head_col_text; 
+  	}  
+  }
+}
+

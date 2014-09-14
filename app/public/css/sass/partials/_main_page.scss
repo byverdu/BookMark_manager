@@ -1,0 +1,22 @@
+@import "partials/base";
+
+/* Style rules */
+
+body{
+    background: url(images/back.png)
+}
+
+.wrapper{
+	width: $width;
+	margin: 0 auto;
+  position: relative;
+  top: 50px;
+  min-height: 250px;
+}
+
+.wrap_look{
+	font-family: $main_font !important;
+	border: 1px solid;
+	box-shadow: 1px 1px 50px black;
+	background: whitesmoke;
+}

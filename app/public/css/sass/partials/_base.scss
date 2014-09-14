@@ -1,0 +1,54 @@
+/* SCSS variables */
+
+/*google  fonts*/
+
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+
+$width :     800px;
+$head_font:  'Amatic SC', cursive;
+$main_font:  'Ubuntu Mono';
+$head_col_shad: #535353;
+$head_col_text: #ffffff;
+$head_col_bg:   #F5E168;
+$link_color:    #F54A08;
+$box-shadow: 1px 1px 1px;
+
+/* Reusable blocks */
+
+@mixin new_btn(){
+	height: 31px;
+	background: transparent;
+	font-size: 14px;
+
+	&:hover {cursor: pointer;}
+}
+
+@mixin position_sign(){
+	position: relative;
+	top: 20px;
+	margin: 0 auto;
+	width: 420px;
+	padding: 3%;
+
+	h2{position: inherit; top: -20px;
+		
+		&:first-letter{ font-size: 40px}
+	}
+}
+
+@mixin link_style{
+	text-decoration: none;
+	color: $link_color;
+	letter-spacing: 1px;
+
+	&:hover{text-decoration: underline;}
+}
+
+@mixin input_style(){
+	display: block;
+	margin-bottom: 20px;
+	height: 30px;
+	font-size: 18px;
+	text-align: center;
+}

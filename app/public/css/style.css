@@ -6,17 +6,29 @@
 /* CSS reset */
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=latin,latin-ext);
 * {
   margin: 0;
   padding: 0; }
 
-/*google  fonts*/
+/* Partials */
 /* SCSS variables */
+/*google  fonts*/
 /* Reusable blocks */
-/* Amends */
-.fa-plus {
-  font-size: 14px !important; }
-
+/* SCSS variables */
+/*google  fonts*/
+/* Reusable blocks */
 /* Style rules */
 body {
   background: url(images/back.png); }
@@ -34,6 +46,9 @@ body {
   box-shadow: 1px 1px 50px black;
   background: whitesmoke; }
 
+/* SCSS variables */
+/*google  fonts*/
+/* Reusable blocks */
 /* Buttons style */
 .shape_btn {
   border: 2px solid #535353;
@@ -54,6 +69,9 @@ body {
     background: #ffffff;
     box-shadow: none; }
 
+/* SCSS variables */
+/*google  fonts*/
+/* Reusable blocks */
 /* Top header styles */
 .top_head {
   height: 80px;
@@ -87,6 +105,9 @@ body {
     top: 55px;
     right: -14px; }
 
+/* SCSS variables */
+/*google  fonts*/
+/* Reusable blocks */
 /* Link styles */
 .link_wrap {
   width: 700px;
@@ -147,6 +168,9 @@ body {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   color: white; }
 
+/* SCSS variables */
+/*google  fonts*/
+/* Reusable blocks */
 /* Styling forms */
 .wrap_sig_in {
   position: relative;
@@ -212,6 +236,47 @@ body {
     .wrap_sign_up .btn_btn:hover {
       background: #ffffff; }
 
+.reset_pswd {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  width: 420px;
+  padding: 3%; }
+  .reset_pswd h2 {
+    position: inherit;
+    top: -20px; }
+    .reset_pswd h2:first-letter {
+      font-size: 40px; }
+  .reset_pswd input {
+    display: block;
+    margin-bottom: 20px;
+    height: 30px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 1px 1px 20px; }
+  .reset_pswd p {
+    position: relative;
+    top: -20px;
+    font-size: 24px; }
+    .reset_pswd p:first-letter {
+      font-size: 40px; }
+  .reset_pswd .btn_btn {
+    border: 2px solid #535353;
+    float: left;
+    position: relative;
+    top: -72px;
+    left: 230px;
+    height: 31px;
+    background: transparent;
+    font-size: 14px; }
+    .reset_pswd .btn_btn:hover {
+      cursor: pointer; }
+    .reset_pswd .btn_btn:hover {
+      background: #ffffff; }
+
+/* SCSS variables */
+/*google  fonts*/
+/* Reusable blocks */
 /* Footer */
 footer {
   display: flex;
@@ -234,5 +299,9 @@ footer {
     flex: 1; }
   footer p {
     padding: 5px 25px; }
+
+/* Amends */
+.fa-plus {
+  font-size: 14px !important; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,70 @@
+@import "partials/base";
+
+/* Link styles */
+
+.link_wrap{
+	width: ($width)-100;
+	margin: 0 auto;
+	padding: 5%;
+	
+	li { list-style: none; }
+	
+	.link{
+		background-color: #EEE;
+		box-shadow: 0 0 5px rgba(0,0,0,0.4);
+		margin: 10px inherit;
+		padding: 15px 10px;
+		height: 100px;
+	
+		a { @include link_style; }
+
+		.description{margin: 10px inherit}
+		
+		.source{position:relative; top: 20px;}
+	}
+
+	.tag_wrap{
+		position: relative;
+		top: -40px;
+		right: 10px;
+		width: 300px;
+		float: right;
+
+		.tag{
+			border: 1px solid;
+			padding: 4px;
+			border-radius: 5px;
+			background: $link_color;
+			color: white;
+			text-shadow: 0px 1px black;
+			box-shadow: 0 0 3px black;
+		}
+	}
+}
+
+
+.new_link{
+	
+	.btn_btn{
+  	border: 2px solid $head_col_shad; 
+
+		@include new_btn;
+
+  	&:hover{ background: $head_col_text; 
+  	}  
+  }
+
+  form{
+  	color: red;
+  }	
+}
+
+.notice{
+	text-align: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(67,183,120,0.75);
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  color: white;
+}
