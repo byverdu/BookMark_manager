@@ -69,10 +69,8 @@ body {
 
 .wrapper {
   width: 800px;
-  margin: 0 auto;
-  position: relative;
-  top: 50px;
-  min-height: 250px; }
+  margin: 30px auto 60px;
+  min-height: 100%; }
 
 .wrap_look {
   font-family: "Ubuntu Mono" !important;
@@ -170,8 +168,8 @@ body {
   .top_head .greet {
     width: 300px;
     position: absolute;
-    top: 55px;
-    right: -14px; }
+    top: 90px;
+    margin-left: 65px; }
 
 /* SCSS variables */
 /*google  fonts*/
@@ -361,31 +359,31 @@ body {
     .wrap_sign_up .btn_btn:hover {
       background: #ffffff; }
 
-.reset_pswd {
+.reset_pswd, .confirm_pass {
   position: relative;
   top: 20px;
   margin: 0 auto;
   width: 420px;
   padding: 3%; }
-  .reset_pswd h2 {
+  .reset_pswd h2, .confirm_pass h2 {
     position: inherit;
     top: -20px; }
-    .reset_pswd h2:first-letter {
+    .reset_pswd h2:first-letter, .confirm_pass h2:first-letter {
       font-size: 40px; }
-  .reset_pswd input {
+  .reset_pswd input, .confirm_pass input {
     display: block;
     margin-bottom: 20px;
     height: 30px;
     font-size: 18px;
     text-align: center;
     box-shadow: 1px 1px 20px grey; }
-  .reset_pswd p {
+  .reset_pswd p, .confirm_pass p {
     position: relative;
     top: -20px;
     font-size: 24px; }
-    .reset_pswd p:first-letter {
+    .reset_pswd p:first-letter, .confirm_pass p:first-letter {
       font-size: 40px; }
-  .reset_pswd .btn_btn {
+  .reset_pswd .btn_btn, .confirm_pass .btn_btn {
     border: 2px solid #535353;
     float: left;
     position: relative;
@@ -394,9 +392,9 @@ body {
     height: 31px;
     background: #F5E168;
     font-size: 14px; }
-    .reset_pswd .btn_btn:hover {
+    .reset_pswd .btn_btn:hover, .confirm_pass .btn_btn:hover {
       cursor: pointer; }
-    .reset_pswd .btn_btn:hover {
+    .reset_pswd .btn_btn:hover, .confirm_pass .btn_btn:hover {
       background: #ffffff; }
 
 /* SCSS variables */
@@ -423,9 +421,10 @@ body {
 footer {
   display: flex;
   background-color: rgba(0, 0, 0, 0.2);
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
+  height: 75px;
   font: 15px "Ubuntu Mono"; }
   footer a {
     text-decoration: none;

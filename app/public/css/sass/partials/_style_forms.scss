@@ -54,7 +54,7 @@
   }
 }
 
-.reset_pswd{
+.reset_pswd, .confirm_pass{
 	
 	@include position_sign;
 
@@ -81,4 +81,3 @@
   	}  
   }
 }
-
