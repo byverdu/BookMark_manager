@@ -1,10 +1,11 @@
-<h1>Please sign up</h1>
+<section class="wrap_sign_up">
+	<h2>Please sign up</h2>
 
-<form action="/users" method="post">
+	<form action="/users" method="post">
 	Email: <input type="text" name="email" value="<%= @user.email %>">
 	Password: <input type="password" name="password">
 	Password confirmation: <input type="password" name="password_confirmation">
 
-	<button type="submit">Sign up</button>
-</form>
-
+	<button class="look_btn shape_btn btn_btn" type="submit">Sign up</button>
+	</form>
+</section>

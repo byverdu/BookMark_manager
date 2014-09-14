@@ -37,6 +37,20 @@ $box-shadow: 1px 1px 1px;
 	&:hover {cursor: pointer;}
 }
 
+@mixin position_sign(){
+	position: relative;
+	top: 20px;
+	margin: 0 auto;
+	width: 420px;
+	padding: 3%;
+
+	h2{position: inherit; top: -20px;
+		
+		&:first-letter{ font-size: 40px}
+	}
+
+}
+
 /* Amends */
 
 .fa-plus{
@@ -209,16 +223,8 @@ body{
 
 .wrap_sig_in{
 
-	position: relative;
-	top: 20px;
-	margin: 0 auto;
-	width: 420px;
-	padding: 3%;
+	@include position_sign;
 
-	h2{position: inherit; top: -20px;
-		
-		&:first-letter{ font-size: 40px}
-	}
 
 	a{
 		float: right;
@@ -230,6 +236,29 @@ body{
 		font-size: 20px;
 
 		&:hover{text-decoration: underline;}
+	}
+
+	.btn_btn{
+  	border: 2px solid $head_col_shad; 
+
+		@include new_btn;
+
+  	&:hover{ background: $head_col_text; 
+  	}  
+  }
+}
+
+.wrap_sign_up{
+
+	@include position_sign;
+
+	input{ display: block;margin-bottom: 20px;}
+
+	button{
+		float: right;
+		position: relative;
+		top: -140px;
+		right: 70px;
 	}
 
 	.btn_btn{

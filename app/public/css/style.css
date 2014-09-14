@@ -179,6 +179,35 @@ body {
     .wrap_sig_in .btn_btn:hover {
       background: #ffffff; }
 
+.wrap_sign_up {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  width: 420px;
+  padding: 3%; }
+  .wrap_sign_up h2 {
+    position: inherit;
+    top: -20px; }
+    .wrap_sign_up h2:first-letter {
+      font-size: 40px; }
+  .wrap_sign_up input {
+    display: block;
+    margin-bottom: 20px; }
+  .wrap_sign_up button {
+    float: right;
+    position: relative;
+    top: -140px;
+    right: 70px; }
+  .wrap_sign_up .btn_btn {
+    border: 2px solid #535353;
+    height: 31px;
+    background: transparent;
+    font-size: 14px; }
+    .wrap_sign_up .btn_btn:hover {
+      cursor: pointer; }
+    .wrap_sign_up .btn_btn:hover {
+      background: #ffffff; }
+
 /* Footer */
 footer {
   display: flex;
