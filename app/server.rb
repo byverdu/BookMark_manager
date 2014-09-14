@@ -22,6 +22,8 @@ require_relative './controllers/users'
 
 class Bookmark < Sinatra::Base
 
+	register Sinatra::Partial
+
 	configure :production do
   require 'newrelic_rpm'
   end
@@ -33,7 +35,6 @@ class Bookmark < Sinatra::Base
 		set :session_secret, 'super secret'
 	end
 	
-	register Sinatra::Partial
 
 	include ApplicationHelpers
   include SendMail
