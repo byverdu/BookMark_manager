@@ -45,26 +45,3 @@ class Bookmark < Sinatra::Base
 	use Rack::Flash
 	use Rack::MethodOverride
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
