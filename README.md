@@ -11,4 +11,32 @@ The website will have the following options:
 - Add tags to the links
 - Filter links by a tag
 
-This website is built using Ruby, Sinatra, RSpec, Capybara, SQL, SASS, HTML and CSS.
+### How to run the tests
+
+```ruby
+> clone https://github.com/byverdu/BookMark_manager.git
+> cd BookMark_manager
+
+# Install all dependencies:
+> bundle install
+
+# Create a local database:
+> psql
+  =# CREATE DATABASE bookmark_manager_test;
+  =# \q
+
+# Run the auto-upgrade task:
+> rake auto_upgrade
+> rspec -fd
+```
+
+### Technologies used 
+
+1. Ruby
+2. Sinatra
+1. RSpec
+2. Capybara
+1. SQL
+1. SASS
+1. HTML 
+1. CSS
