@@ -22,6 +22,12 @@ feature "User signs up" do
 			expect(page).to have_content('The email field must be filled')
 		end
 
+		scenario "the email must have a valid format" do
+			expect{ sign_up('alice@example', 'pass','pass') }.to change(User, :count).by(0)
+
+			expect(page).to have_content('The email must have a valid format')	
+		end
+
 		scenario "with an empty password field" do
 
 			expect{ sign_up('alice@example.com', '','') }.to change(User, :count).by(0)
