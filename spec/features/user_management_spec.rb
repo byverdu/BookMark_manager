@@ -102,7 +102,19 @@ feature "Forgotten password" do
 		click_button("Send")
 
 		expect(page).to have_content("Your password has been changed")
+	end
 
+	scenario "the token can be used only for one hour" do
+
+		User.create(email: 'alice@example.com',
+			          password: 'test',
+			          password_confirmation: 'test',
+			          password_token: 'lastToken',
+			          password_token_timestamp: Time.new(2014))
+
+		visit "users/reset_password/lastToken"
+
+		expect(page).to have_content("Your token has expired")
 
 	end
 
