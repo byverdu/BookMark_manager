@@ -36,9 +36,9 @@ end
 feature "User signs in" do
 	
 	before(:each) do
-		User.create(email: 								 'test@test.com',
-								password: 						 'test',
-								password_confirmation: 'test')
+		User.create(email:   'test@test.com',
+			    password: 'test',
+			    password_confirmation: 'test')
 	end
 
 	scenario "with correct credentials" do
@@ -59,7 +59,19 @@ feature "User signs in" do
 		
 	end
 
-	scenario "Forgotten password" do
+end
+
+feature "Forgotten password" do
+
+	before(:each) do
+		User.create(email:   'test@test.com',
+			    password: 'test',
+			    password_confirmation: 'test',
+			    password_token: 'newToken',
+			    password_token_timestamp: Time.now)
+	end
+
+	scenario "Sending email to user" do
 
 		visit '/sessions/new'
 
@@ -77,9 +89,19 @@ feature "User signs in" do
 	end
 
 	scenario "resetting password" do
-		visit '/users/reset_password'
 
-		
+		visit "users/reset_password/newToken"
+
+		expect(current_path).to eq("/users/confirm_password_reset")
+
+		expect(page).to have_content("Please enter your new password test@test.com")
+
+		fill_in "password",              with: 'test0'
+		fill_in "password_confirmation", with: 'test0'
+
+		click_button("Send")
+
+		expect(page).to have_content("Your password has been changed")
 
 
 	end
@@ -90,9 +112,9 @@ feature "User signs out" do
 
 	before(:each) do
 
-		User.create( email:                 "test@test.com",
-								 password:              "test",
-								 password_confirmation: "test")
+		User.create( email:"test@test.com",
+	                     password:"test",
+			     password_confirmation: "test")
 	end
 
 	scenario "while being signed in" do
