@@ -20,6 +20,18 @@
 
 		<%=yield%>
 	</div>
+	
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+	<script>
+
+		window.setTimeout(function() {
+        $(".message").fadeTo(4500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 4000);
+
+	</script>
 
 </body>
 </html>
