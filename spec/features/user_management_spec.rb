@@ -13,22 +13,33 @@ feature "User signs up" do
 
 	end
 
-	scenario "with a password that doesn't match" do
+	feature "problems when singing up" do
 
-		expect{ sign_up('a@a.com', 'pass', 'wrong') }.to change(User, :count).by(0)
-		expect(current_path).to eq('/users')
-		expect(page).to have_content("Sorry, your passwords don't match")
+		scenario "with an empty email field" do
 
-	end
+			expect{ sign_up('', 'pass','pass') }.to change(User, :count).by(0)
 
-	scenario "with an email that is already registered" do 
+			expect(page).to have_content('The email field must be filled')
 
-		expect{ sign_up }.to change(User, :count).by(1)
-		expect{ sign_up }.to change(User, :count).by(0)
 
-		expect(page).to have_content("This email is already taken")
+		end
 
-	end
+		scenario "with a password that doesn't match" do
+
+			expect{ sign_up('a@a.com', 'pass', 'wrong') }.to change(User, :count).by(0)
+			expect(current_path).to eq('/users')
+			expect(page).to have_content("Sorry, your passwords don't match")
+
+		end
+
+		scenario "with an email that is already registered" do 
+
+			expect{ sign_up }.to change(User, :count).by(1)
+			expect{ sign_up }.to change(User, :count).by(0)
+
+			expect(page).to have_content("This email is already taken")
+		end
+  end
 end
 
 

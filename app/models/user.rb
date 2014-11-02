@@ -12,7 +12,10 @@ class User
 
 	attr_reader   :password
 	attr_accessor :password_confirmation
+	
 	validates_confirmation_of :password, :message => "Sorry, your passwords don't match"
+  validates_presence_of    :email, :message => "The email field must be filled"
+
 
 	def password=(password)
 		@password = password
