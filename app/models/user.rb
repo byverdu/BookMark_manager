@@ -15,6 +15,7 @@ class User
 	
 	validates_confirmation_of :password, :message => "Sorry, your passwords don't match"
   validates_presence_of    :email, :message => "The email field must be filled"
+  validates_length_of       :password, min: 1, message: "The password field must be filled"
 
 
 	def password=(password)

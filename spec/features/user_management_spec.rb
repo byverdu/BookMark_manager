@@ -20,8 +20,13 @@ feature "User signs up" do
 			expect{ sign_up('', 'pass','pass') }.to change(User, :count).by(0)
 
 			expect(page).to have_content('The email field must be filled')
+		end
 
+		scenario "with an empty password field" do
 
+			expect{ sign_up('alice@example.com', '','') }.to change(User, :count).by(0)
+
+			expect(page).to have_content('The password field must be filled')
 		end
 
 		scenario "with a password that doesn't match" do
