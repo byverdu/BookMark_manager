@@ -16,7 +16,7 @@ $box-shadow: 1px 1px 1px;
 @mixin new_btn(){
 	height: 31px;
 	background: $head_col_bg;
-	font-size: 14px;
+	font-size: 13px;
 
 	&:hover {cursor: pointer;}
 }
