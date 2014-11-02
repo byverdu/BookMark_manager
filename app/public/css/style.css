@@ -296,7 +296,7 @@ body {
     float: right;
     position: inherit;
     top: -48px;
-    right: -150px;
+    right: -210px;
     font-size: 20px; }
     .wrap_sig_in a:hover {
       text-decoration: underline; }
@@ -384,51 +384,6 @@ body {
       cursor: pointer; }
     .reset_pswd .btn_btn:hover, .confirm_pass .btn_btn:hover {
       background: #ffffff; }
-
-/* SCSS variables */
-/*google  fonts*/
-/* Reusable blocks */
-.message, .notice, .errors {
-  text-align: center;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 4px;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-  color: white; }
-
-.notice {
-  background-color: rgba(67, 183, 120, 0.75); }
-
-.errors {
-  background-color: rgba(245, 74, 8, 0.75); }
-
-.errors li {
-  list-style: none; }
-
-/* Footer */
-footer {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 75px;
-  font: 15px "Ubuntu Mono"; }
-  footer a {
-    text-decoration: none;
-    color: #F54A08;
-    letter-spacing: 1px; }
-    footer a:hover {
-      text-decoration: underline; }
-  footer img {
-    /* http://stackoverflow.com/questions/10658475/3px-extra-height-on-a-div-with-an-image-inside-it */
-    vertical-align: top; }
-  footer #technologies {
-    -webkit-flex: 1;
-    flex: 1; }
-  footer p {
-    padding: 5px 25px; }
 
 /* Amends */
 .fa-plus {
